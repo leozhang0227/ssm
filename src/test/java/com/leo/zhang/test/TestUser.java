@@ -12,7 +12,7 @@ import com.alibaba.fastjson.JSON;
 import com.leo.zhang.model.User;
 import com.leo.zhang.service.IUserService;
 
-@RunWith(SpringJUnit4ClassRunner.class)     //表示继承了SpringJUnit4ClassRunner类  
+@RunWith(SpringJUnit4ClassRunner.class)     //卤铆脢戮录脤鲁脨脕脣SpringJUnit4ClassRunner脌脿  
 @ContextConfiguration(locations = {"classpath:spring-mybatis.xml"})  
   
 public class TestUser {  
@@ -31,7 +31,8 @@ public class TestUser {
     public void test1() {  
         User user = userService.getUserById(1);  
         // System.out.println(user.getUserName());  
-        // logger.info("值："+user.getUserName());  
+        // logger.info("脰碌拢潞"+user.getUserName());  
         logger.info(JSON.toJSONString(user));  
+        logger.info("add from web");
     }  
 }  
