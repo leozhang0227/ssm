@@ -13,10 +13,20 @@ import com.leo.zhang.service.IUserService;
 @Repository
 public class UserService implements IUserService{
 
+	@Override
+	public boolean delete(int userId) {
+		this.userDao.deleteByPrimaryKey(userId);
+		return true;
+	}
 	@Resource
     private UserMapper userDao;
 	public User getUserById(int userId) {
 		return this.userDao.selectByPrimaryKey(userId);
+	}
+	@Override
+	public boolean insert(User user) {
+		this.userDao.insert(user);
+		return true;
 	}
 	
 

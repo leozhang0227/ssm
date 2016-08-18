@@ -28,11 +28,24 @@ public class TestUser {
 //  }  
   
     @Test  
-    public void test1() {  
+    public void testGetUserById() {  
         User user = userService.getUserById(1);  
         // System.out.println(user.getUserName());  
         // logger.info("Öµ£º"+user.getUserName());  
         logger.info(JSON.toJSONString(user));  
         logger.info("add from web");
+    }
+    
+    @Test  
+    public void testUserInsert() {  
+    	User user = new User();
+    	user.setId(99);
+    	user.setAge(33);
+    	user.setPassword("pass");
+    	user.setUserName("2 fucks");
+        boolean result =  userService.insert(user);        
+        logger.info("the user add successful or not?"+result);  
+        boolean deleteResult = userService.delete(99);
+        logger.info("the user delete successful or not?"+deleteResult);
     }  
 }  
